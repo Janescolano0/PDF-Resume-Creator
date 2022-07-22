@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 
 namespace pdf_creator
 {
     public partial class PDFandJSONcreator : Form
     {
-        private readonly string json_filepath = @"C:\Users\joy\source\repos\pdf creator\json\info.JSON";
+        private readonly string JSONpath = @"C:\Users\joy\source\repos\pdf creator\json\info.JSON";
 
         public PDFandJSONcreator()
         {
@@ -22,13 +24,43 @@ namespace pdf_creator
 
         private void btn__generate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string JSONfile;
+                using (var readJSON = new StreamReader(JSONpath))
+                {
+                    JSONfile = readJSON.ReadToEnd();
+                }
 
-           
+                tbox__show.Text = JSONfile;
+
+                var JSONdeserialize = JsonConvert.DeserializeObject<Info>(JSONfile);
+            }
+
+            catch (Exception)
+            {
+                // ignored
+            }
+
         }
 
         private void btn__show_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                var resume = GetResume();
+
+                var JSONSerialize = JsonConvert.SerializeObject(resume, Formatting.Indented);
+
+                using (var writeJSON = new StreamWriter(JSONpath))
+                {
+                    writeJSON.Write(JSONSerialize);
+                }
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         public class Info
