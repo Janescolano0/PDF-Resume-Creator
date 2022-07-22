@@ -136,12 +136,12 @@ namespace pdf_creator
 
         private void btn__generate2_Click(object sender, EventArgs e)
         {
-            string jsonFile;
-            using (var reader = new StreamReader(JSONpath))
+            string JSONfile;
+            using (var readJSON = new StreamReader(JSONpath))
             {
-                jsonFile = reader.ReadToEnd();
+                JSONfile = readJSON.ReadToEnd();
             }
-            var Resume = JsonConvert.DeserializeObject<Info>(jsonFile);
+            var Resume = JsonConvert.DeserializeObject<Info>(JSONfile);
 
             //Name
             string Name = Resume.Name;
