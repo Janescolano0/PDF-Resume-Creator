@@ -136,7 +136,50 @@ namespace pdf_creator
 
         private void btn__generate2_Click(object sender, EventArgs e)
         {
+            string jsonFile;
+            using (var reader = new StreamReader(JSONpath))
+            {
+                jsonFile = reader.ReadToEnd();
+            }
+            var Resume = JsonConvert.DeserializeObject<Info>(jsonFile);
 
+            //Name
+            string Name = Resume.Name;
+
+            //Contacts
+            string Address = Resume.Address;
+            string Address2 = Resume.Address2;
+            string Email = Resume.Email;
+            string Github = Resume.ContactNumber;
+           
+            //Personal Profile
+            string Age = Resume.Age;
+            string Height = Resume.Age;
+            string Weight = Resume.Age;
+            string Language = Resume.Age;
+            string Religion = Resume.Age;
+            string Birthdate = Resume.Age;
+            string Birthplace = Resume.Age;
+            string Gender = Resume.Age;
+            string Citizenship = Resume.Age;
+
+            //Educational Profile
+            string College = Resume.College;
+            string CollegeSY = Resume.CollegeSY;
+            string Course = Resume.Course;
+            string SeniorHighSchool = Resume.SeniorHighSchool;
+            string SeniorHighSchoolSY = Resume.SeniorHighSchoolSY;
+            string Strand = Resume.Strand;
+            string Elementary = Resume.Elementary;
+            string ElementarySY = Resume.ElementarySY;
+
+            //Skills Summary
+            string _Skills1 = Resume._Skills1;
+            string _Skills2 = Resume._Skills1;
+            string _Skills3 = Resume._Skills1;
+
+            //Work Experience
+            string WorkExperience = Resume.WorkExperience;
         }
     }
 }
