@@ -44,7 +44,9 @@
             this.tbox__show.Location = new System.Drawing.Point(32, 75);
             this.tbox__show.Multiline = true;
             this.tbox__show.Name = "tbox__show";
-            this.tbox__show.Size = new System.Drawing.Size(309, 383);
+            this.tbox__show.ReadOnly = true;
+            this.tbox__show.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbox__show.Size = new System.Drawing.Size(391, 383);
             this.tbox__show.TabIndex = 0;
             // 
             // lbl__JSON
@@ -76,7 +78,7 @@
             this.btn__show.BackColor = System.Drawing.Color.DimGray;
             this.btn__show.Font = new System.Drawing.Font("Bahnschrift Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn__show.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn__show.Location = new System.Drawing.Point(347, 402);
+            this.btn__show.Location = new System.Drawing.Point(429, 402);
             this.btn__show.Name = "btn__show";
             this.btn__show.Size = new System.Drawing.Size(151, 56);
             this.btn__show.TabIndex = 3;
