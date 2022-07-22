@@ -108,6 +108,7 @@
             this.btn__generate2.TabIndex = 5;
             this.btn__generate2.Text = "Generate";
             this.btn__generate2.UseVisualStyleBackColor = false;
+            this.btn__generate2.Click += new System.EventHandler(this.btn__generate2_Click);
             // 
             // lbl__display
             // 

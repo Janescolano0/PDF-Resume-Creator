@@ -133,5 +133,10 @@ namespace pdf_creator
             public string _Skills3 { get; set; }
             
         }
+
+        private void btn__generate2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
