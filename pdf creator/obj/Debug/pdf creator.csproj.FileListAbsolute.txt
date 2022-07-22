@@ -1,0 +1,14 @@
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\pdf creator.exe.config
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\pdf creator.exe
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\pdf creator.pdb
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.AssemblyReference.cache
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.SuggestedBindingRedirects.cache
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf_creator.PDFandJSONcreator.resources
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf_creator.Properties.Resources.resources
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.GenerateResource.cache
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.CoreCompileInputs.cache
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.CopyComplete
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.exe
+C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.pdb
