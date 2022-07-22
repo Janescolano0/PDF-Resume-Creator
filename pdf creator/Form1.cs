@@ -26,17 +26,15 @@ namespace pdf_creator
         {
             try
             {
-                string JSONfile;
-                using (var readJSON = new StreamReader(JSONpath))
+                var resume = CreateResume();
+
+                var JSONSerialize = JsonConvert.SerializeObject(resume, Formatting.Indented);
+
+                using (var writeJSON = new StreamWriter(JSONpath))
                 {
-                    JSONfile = readJSON.ReadToEnd();
+                    writeJSON.Write(JSONSerialize);
                 }
-
-                tbox__show.Text = JSONfile;
-
-                var JSONdeserialize = JsonConvert.DeserializeObject<Info>(JSONfile);
             }
-
             catch (Exception)
             {
                 // ignored
@@ -48,15 +46,17 @@ namespace pdf_creator
         {
             try
             {
-                var resume = CreateResume();
-
-                var JSONSerialize = JsonConvert.SerializeObject(resume, Formatting.Indented);
-
-                using (var writeJSON = new StreamWriter(JSONpath))
+                string JSONfile;
+                using (var readJSON = new StreamReader(JSONpath))
                 {
-                    writeJSON.Write(JSONSerialize);
+                    JSONfile = readJSON.ReadToEnd();
                 }
+
+                tbox__show.Text = JSONfile;
+
+                var JSONdeserialize = JsonConvert.DeserializeObject<Info>(JSONfile);
             }
+
             catch (Exception)
             {
                 // ignored
