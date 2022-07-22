@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tbox__show = new System.Windows.Forms.TextBox();
-            this.lbl__JSONfile = new System.Windows.Forms.Label();
+            this.lbl__JSON = new System.Windows.Forms.Label();
             this.btn__generate = new System.Windows.Forms.Button();
             this.btn__show = new System.Windows.Forms.Button();
-            this.lbl__PDFfile = new System.Windows.Forms.Label();
+            this.lbl__PDF = new System.Windows.Forms.Label();
             this.btn__generate2 = new System.Windows.Forms.Button();
             this.lbl__display = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -47,16 +47,16 @@
             this.tbox__show.Size = new System.Drawing.Size(309, 383);
             this.tbox__show.TabIndex = 0;
             // 
-            // lbl__JSONfile
+            // lbl__JSON
             // 
-            this.lbl__JSONfile.AutoSize = true;
-            this.lbl__JSONfile.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl__JSONfile.ForeColor = System.Drawing.Color.Snow;
-            this.lbl__JSONfile.Location = new System.Drawing.Point(445, 32);
-            this.lbl__JSONfile.Name = "lbl__JSONfile";
-            this.lbl__JSONfile.Size = new System.Drawing.Size(157, 45);
-            this.lbl__JSONfile.TabIndex = 1;
-            this.lbl__JSONfile.Text = "JSON File";
+            this.lbl__JSON.AutoSize = true;
+            this.lbl__JSON.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__JSON.ForeColor = System.Drawing.Color.Snow;
+            this.lbl__JSON.Location = new System.Drawing.Point(507, 32);
+            this.lbl__JSON.Name = "lbl__JSON";
+            this.lbl__JSON.Size = new System.Drawing.Size(95, 45);
+            this.lbl__JSON.TabIndex = 1;
+            this.lbl__JSON.Text = "JSON";
             // 
             // btn__generate
             // 
@@ -69,6 +69,7 @@
             this.btn__generate.TabIndex = 2;
             this.btn__generate.Text = "Generate";
             this.btn__generate.UseVisualStyleBackColor = false;
+            this.btn__generate.Click += new System.EventHandler(this.btn__generate_Click);
             // 
             // btn__show
             // 
@@ -81,17 +82,18 @@
             this.btn__show.TabIndex = 3;
             this.btn__show.Text = "Show Info";
             this.btn__show.UseVisualStyleBackColor = false;
+            this.btn__show.Click += new System.EventHandler(this.btn__show_Click);
             // 
-            // lbl__PDFfile
+            // lbl__PDF
             // 
-            this.lbl__PDFfile.AutoSize = true;
-            this.lbl__PDFfile.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl__PDFfile.ForeColor = System.Drawing.Color.Snow;
-            this.lbl__PDFfile.Location = new System.Drawing.Point(463, 195);
-            this.lbl__PDFfile.Name = "lbl__PDFfile";
-            this.lbl__PDFfile.Size = new System.Drawing.Size(139, 45);
-            this.lbl__PDFfile.TabIndex = 4;
-            this.lbl__PDFfile.Text = "PDF File";
+            this.lbl__PDF.AutoSize = true;
+            this.lbl__PDF.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__PDF.ForeColor = System.Drawing.Color.Snow;
+            this.lbl__PDF.Location = new System.Drawing.Point(525, 188);
+            this.lbl__PDF.Name = "lbl__PDF";
+            this.lbl__PDF.Size = new System.Drawing.Size(77, 45);
+            this.lbl__PDF.TabIndex = 4;
+            this.lbl__PDF.Text = "PDF";
             // 
             // btn__generate2
             // 
@@ -124,10 +126,10 @@
             this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.lbl__display);
             this.Controls.Add(this.btn__generate2);
-            this.Controls.Add(this.lbl__PDFfile);
+            this.Controls.Add(this.lbl__PDF);
             this.Controls.Add(this.btn__show);
             this.Controls.Add(this.btn__generate);
-            this.Controls.Add(this.lbl__JSONfile);
+            this.Controls.Add(this.lbl__JSON);
             this.Controls.Add(this.tbox__show);
             this.Name = "PDFandJSONcreator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -140,10 +142,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbox__show;
-        private System.Windows.Forms.Label lbl__JSONfile;
+        private System.Windows.Forms.Label lbl__JSON;
         private System.Windows.Forms.Button btn__generate;
         private System.Windows.Forms.Button btn__show;
-        private System.Windows.Forms.Label lbl__PDFfile;
+        private System.Windows.Forms.Label lbl__PDF;
         private System.Windows.Forms.Button btn__generate2;
         private System.Windows.Forms.Label lbl__display;
     }
