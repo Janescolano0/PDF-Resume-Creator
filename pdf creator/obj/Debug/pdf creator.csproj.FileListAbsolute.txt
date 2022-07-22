@@ -12,3 +12,9 @@ C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.C
 C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.csproj.CopyComplete
 C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.exe
 C:\Users\joy\source\repos\pdf creator\pdf creator\obj\Debug\pdf creator.pdb
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\PdfSharp.Charting.dll
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\PdfSharp.dll
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\PdfSharp.xml
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\PdfSharp.Charting.xml
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\joy\source\repos\pdf creator\pdf creator\bin\Debug\de\PdfSharp.Charting.resources.dll

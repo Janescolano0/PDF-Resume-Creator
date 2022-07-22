@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
 
 
 namespace pdf_creator
@@ -69,15 +71,15 @@ namespace pdf_creator
             {
 
                 Name = "Joy Ann A. Escolano",
-                Age = "19",
-                Height = "5'4",
-                Weight = "123 lbs.",
-                Language = "English and Filipino",
-                Religion = "Born-Again, Christian",
-                Birthdate = "June 10, 2003",
-                Birthplace = "Taguig City",
-                Gender = "Female",
-                Citizenship = "Filipino",
+                Age = "Age: 19",
+                Height = "Height: 5'4",
+                Weight = "Weight: 123 lbs.",
+                Language = "Language: English and Filipino",
+                Religion = "Religion: Born-Again, Christian",
+                Birthdate = "Date of Birth: June 10, 2003",
+                Birthplace = "Place of Birth: Taguig City",
+                Gender = "Gender: Female",
+                Citizenship = "Citizenship: Filipino",
                 Address = "Blk 33 Lot 40B-3 Sunflower St.,",
                 Address2 = "Central Bicutan, Taguig City",
                 Email = "joyann381@gmail.com",
@@ -150,36 +152,130 @@ namespace pdf_creator
             string Address = Resume.Address;
             string Address2 = Resume.Address2;
             string Email = Resume.Email;
-            string Github = Resume.ContactNumber;
+            string ContactNumber = Resume.ContactNumber;
            
             //Personal Profile
             string Age = Resume.Age;
-            string Height = Resume.Age;
-            string Weight = Resume.Age;
-            string Language = Resume.Age;
-            string Religion = Resume.Age;
-            string Birthdate = Resume.Age;
-            string Birthplace = Resume.Age;
-            string Gender = Resume.Age;
-            string Citizenship = Resume.Age;
+            string Height = Resume.Height;
+            string Weight = Resume.Weight;
+            string Language = Resume.Language;
+            string Religion = Resume.Religion;
+            string Birthdate = Resume.Birthdate;
+            string Birthplace = Resume.Birthplace;
+            string Gender = Resume.Gender;
+            string Citizenship = Resume.Citizenship;
 
-            //Educational Profile
+            //Educational History
             string College = Resume.College;
             string CollegeSY = Resume.CollegeSY;
             string Course = Resume.Course;
             string SeniorHighSchool = Resume.SeniorHighSchool;
             string SeniorHighSchoolSY = Resume.SeniorHighSchoolSY;
             string Strand = Resume.Strand;
+            string JuniorHighSchool = Resume.JuniorHighSchool;
+            string JuniorHighSchoolSY = Resume.JuniorHighSchoolSY;
             string Elementary = Resume.Elementary;
             string ElementarySY = Resume.ElementarySY;
 
             //Skills Summary
             string _Skills1 = Resume._Skills1;
-            string _Skills2 = Resume._Skills1;
-            string _Skills3 = Resume._Skills1;
+            string _Skills2 = Resume._Skills2;
+            string _Skills3 = Resume._Skills3;
 
             //Work Experience
             string WorkExperience = Resume.WorkExperience;
+
+            using (SaveFileDialog saveFile = new SaveFileDialog())
+            {
+                saveFile.InitialDirectory = @"C:\Users\joy\source\repos\pdf creator\pdf";
+                saveFile.FileName = Name + ".pdf";
+                saveFile.Filter = "PDF|*.pdf";
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    PdfDocument pdf = new PdfDocument();
+                    pdf.Info.Title = Name + " " + "Resume";
+                    PdfPage page = pdf.AddPage();
+
+                    XGraphics graphics = XGraphics.FromPdfPage(page);
+
+                    XFont title_mediumsize = new XFont(" ", 19, XFontStyle.Bold);  
+                    XFont info = new XFont(" ", 12, XFontStyle.Regular);
+                    XFont FONTbig = new XFont(" ", 35, XFontStyle.Bold);
+
+                    graphics.DrawRectangle(XBrushes.SaddleBrown, 13, 0, 190, 1000);
+                    graphics.DrawRectangle(XBrushes.Goldenrod, 0, 25, 1000, 140);
+                    
+
+                    //Line
+                    graphics.DrawRectangle(XBrushes.White, 0, 50, 1000, 3);
+
+                    //Name
+                    graphics.DrawString(Name, FONTbig, XBrushes.SaddleBrown, new XRect(230, 70, 0, 0 ), XStringFormats.TopLeft);
+
+                    //Line
+                    graphics.DrawRectangle(XBrushes.White, 0, 130, 1000, 3);
+
+                    //Contacts
+                    graphics.DrawString("Contacts", title_mediumsize, XBrushes.White, new XRect(25, 200, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Address, info, XBrushes.White, new XRect(30, 225, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Address2, info, XBrushes.White, new XRect(30, 240, 0, 0 ), XStringFormats.TopLeft);
+                    graphics.DrawString(Email, info, XBrushes.White, new XRect(30, 255, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(ContactNumber, info, XBrushes.White, new XRect(30, 270, 0, 0), XStringFormats.TopLeft);
+
+                    //Skills
+                    graphics.DrawString("Skills Summary", title_mediumsize, XBrushes.White, new XRect(25, 320, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(_Skills1, info, XBrushes.White, new XRect(30, 345, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(_Skills2, info, XBrushes.White, new XRect(30, 360, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(_Skills3, info, XBrushes.White, new XRect(30, 375, 0, 0), XStringFormats.TopLeft);
+
+                    //Personal Profile BG
+                    graphics.DrawRectangle(XBrushes.Goldenrod, 230, 195, 360, 30);
+
+                    //Personal Profile
+                    graphics.DrawString("Personal Profile", title_mediumsize, XBrushes.SaddleBrown, new XRect(245, 200, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Age, info, XBrushes.Black, new XRect(245, 230,0 ,0), XStringFormats.TopLeft);
+                    graphics.DrawString(Height, info, XBrushes.Black, new XRect(245, 245, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Weight, info, XBrushes.Black, new XRect(245, 260, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Language, info, XBrushes.Black, new XRect(245, 275, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Religion, info, XBrushes.Black, new XRect(245, 290, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Birthdate, info, XBrushes.Black, new XRect(245, 305, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Birthplace, info, XBrushes.Black, new XRect(245, 320, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Gender, info, XBrushes.Black, new XRect(245, 335, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Citizenship, info, XBrushes.Black, new XRect(245, 350, 0, 0), XStringFormats.TopLeft);
+
+                    //Educational History BG
+                    graphics.DrawRectangle(XBrushes.Goldenrod, 230, 380, 360, 30);
+
+                    //Educational History
+                    graphics.DrawString("Educational Profile", title_mediumsize, XBrushes.SaddleBrown, new XRect(245, 385, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(College, info, XBrushes.Black, new XRect(245, 415, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(CollegeSY, info, XBrushes.Black, new XRect(245, 430, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Course, info, XBrushes.Black, new XRect(245, 445, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(SeniorHighSchool, info, XBrushes.Black, new XRect(245, 475, 0, 0), XStringFormats.TopLeft); 
+                    graphics.DrawString(SeniorHighSchoolSY, info, XBrushes.Black, new XRect(245, 490, 0, 0), XStringFormats.TopLeft); 
+                    graphics.DrawString(Strand, info, XBrushes.Black, new XRect(245, 505, 0, 0), XStringFormats.TopLeft); 
+                    graphics.DrawString(JuniorHighSchool, info, XBrushes.Black, new XRect(245, 535, 0, 0), XStringFormats.TopLeft); 
+                    graphics.DrawString(JuniorHighSchoolSY, info, XBrushes.Black, new XRect(245, 550, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(Elementary, info, XBrushes.Black, new XRect(245, 580, 0, 0), XStringFormats.TopLeft); 
+                    graphics.DrawString(ElementarySY, info, XBrushes.Black, new XRect(245, 595, 0, 0), XStringFormats.TopLeft);
+
+
+                    //Work Experience BG
+                    graphics.DrawRectangle(XBrushes.Goldenrod, 230, 625, 360, 30);
+
+                    //Work Experience
+                    graphics.DrawString("Work Experience", title_mediumsize, XBrushes.SaddleBrown, new XRect(245, 630, 0, 0), XStringFormats.TopLeft);
+                    graphics.DrawString(WorkExperience, info, XBrushes.Black, new XRect(245, 660, 0, 0), XStringFormats.TopLeft);
+
+
+
+                    pdf.Save(saveFile.FileName);
+                    MessageBox.Show("Generating...");
+                    MessageBox.Show("PDF file generated");
+                    this.Close();
+
+                }
+            }
         }
     }
 }
