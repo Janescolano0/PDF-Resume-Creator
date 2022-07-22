@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pdf_creator
 {
-    public partial class Form1 : Form
+    public partial class PDFandJSONcreator : Form
     {
-        public Form1()
+        public PDFandJSONcreator()
         {
             InitializeComponent();
         }
