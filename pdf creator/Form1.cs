@@ -48,7 +48,7 @@ namespace pdf_creator
         {
             try
             {
-                var resume = GetResume();
+                var resume = CreateResume();
 
                 var JSONSerialize = JsonConvert.SerializeObject(resume, Formatting.Indented);
 
@@ -63,7 +63,7 @@ namespace pdf_creator
             }
         }
 
-        private Info GetResume()
+        private Info CreateResume()
         {
             var resume = new Info
             {
